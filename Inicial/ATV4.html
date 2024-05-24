@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro do Aluno</title>
+    <style type="text/css">
+        body{background-color: #c0c0c0}
+        input{
+            border-style: solid;border-color: #ccccff;border-width: 3px;
+            margin-top: 3px
+        }
+        p{ font-weight:bold ;height:30px ;width: 75% }
+        </style>
+         <script type="text/javascript">
+             function f1() {
+                 window.alert("perdeu o foco");
+             }
+             </script>
+</head>
+<body>
+    <form id="cadAluno" action="destino.html" method="get">
+    <p>Digite Seu Nome:
+        <input type="text" id="txtNomAluno" size="42" maxlength="40" onBlur="f1()" />       
+   </p>
+   <p>Digite o Seu RM:
+    <input type="text" id="txtRM" size="8" maxlength="6"  />
+   </p>
+   <input type="reset" value="limpar os dados" />
+   <input type="submit" value="confirma o  cadastro" />
+</form>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macbife VII</title>
+    <script type="text/javascript">
+        function verificar() {
+            var  n1 = document.getElementById("txtPratPrin").value;
+            var  n2 = document.getElementById("txtResp").value;
+            if(n1==""){ 
+                window.alert("digite o número de passoas para a reserva");
+                document.getElementById("txtPratPrin").focus();
+                document.getElementById("txtPratPrin").style.backgroundColor="#ff0000";
+                return false;
+            }
+            else if(isNaN(n1)){
+                window.alert("digite APENAS números para a reserva");
+                document.getElementById("txtPratPrin").value="";
+                document.getElementById("txtPratPrin").focus();
+                document.getElementById("txtPratPrin").style.backgroundColor="#ff0000";
+                return false;
+            }
+
+            else{
+                window.alert("número OK");
+                document.getElementById("txtPratPrin").style.backgroundColor="#0000ff";
+            }
+            var n2 = document.getElementById("txtResp").value;
+            if(n2==""){
+                window.alert("digite o nome do responsável pela reserva");
+                document.getElementById("txtResp"). focus();
+                document.getElementById("txtResp").style.backgroundColor="#ff0000";
+                return false;
+            }
+            else{
+                window.alert("responsável OK");
+                document.getElementById("txtResp").style.backgroundColor="#0000ff";
+            }
+            window.alert("CADASTRO OK");
+            return true;
+        }
+        function ticar1(){
+            if(document.getElementById("radtip1").checked){
+                document.getElementById("radtip2").checked = false
+            }
+            else{
+                document.getElementById("radtip1").chacked = false
+            }
+        }
+        function ticar2(){
+            if(document.getElementById("radtip2").checked){
+                document.getElementById("radtip1").checked = false
+            }
+            else{
+                document.getElementById("radtip2").checked = false
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="CadReserva" action="destino.html" onsubmit="return verificar()">
+<fieldset>
+    <legend> Sistema de Reserva</legend>
+<label>Entre o Número de pessoas para a Reserva:</label>
+    <input type="text" id="txtPratPrin" size="30" maxlength="29" /> </p>
+    <label>Nome do Responsável pela reserva</label>
+    <input type="tetx" id="txtResp" size="30" maxlength="29"  />  <br  />
+     
+<label>Tipo de Jantar:</label>
+     <input type="radio" id="radtip1" value="N" checked="checked" onclick="ticar1()"  /> normal
+     <input type="radio" id="radtip2" value="V" onclick="ticar2()"  /> vegetariano <br />
+
+     <input type="submit" value="confirma a digitação" />
+</fieldset>
+    </form> 
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista Idade</title>
+    <script type="text/javascript">
+        function verificar(){
+            var n = document.getElementById("txtfil").value;
+            var opc = document.getElementById("selopc").value;
+            if(n==""){
+                window.alert("digite o número de filhos");
+                document.getElementById("txtfil").focus();
+                document.getElementById("txtfil").style.backgroundColor="#f00";
+            }
+            else if(isNaN(n)){
+                window.alert("digite apenas  números");
+                document.getElementById("txtfil").focus();
+                document.getElementById("txtfil").style.backgroundColor="#f00";
+                document.getElementById("txtfil").value = "";
+            }
+            else if(n<0||n>33){
+                window.alert("números entre de zero a trinta e três ");
+                docunent.getElementById("txtfil").focus();
+                document.getElementById("txtfil").style.backgroundColor="#f00";
+                document.getElementById("txtfil").value = "";
+            }
+            else if(opc=="x"){
+                window.alert("selecione uma opção");
+                document.getElementById("txtfil").focus();
+                document.getElementById("txtfil").style.backgroundColor="#f00";
+                document.getElementById("txtfil").value = "";
+            }
+            else{
+                window.alert("cadastro OK")
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="frmcadastro" method="post">
+        <label for="txtnumero">Digite o número de filhos</label>
+        <input type="tetx" id="txtfil" size="3" maxlength="2"> <br />  <br  />
+        <label>Sua situação
+            <select id="selopc">
+          <option value="x">escolher</option>
+          <option value="e">empregado</option>
+          <option value="a">aposentado</option>
+          <option value="f">afastado</option>
+          <option value="d">desempregado</option>
+          </select> </label>
+          <br /> <br /> <br /> <br />
+          <input type="button" value="Confirma os Dados" onClick="verificar()"  />
+    </form>
+</body>
+</html>
